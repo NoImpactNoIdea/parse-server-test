@@ -86,17 +86,29 @@ app.get("/", function (req, res) {
 //   res.sendFile(path.join(__dirname, '/public/test.html'));
 // });
 
-const port = process.env.PORT || 1337;
-if (!test) {
-  const httpServer = require('http').createServer(app);
-  httpServer.listen(port, function () {
-    console.log('parse-server-example running on port ' + port + '.');
-  });
-  // This will enable the Live Query real-time server
-  ParseServer.createLiveQueryServer(httpServer);
-}
+// const port = process.env.PORT || 1337;
+// if (!test) {
+//   const httpServer = require('http').createServer(app);
+//   httpServer.listen(port, function () {
+//     console.log('parse-server-example running on port ' + port + '.');
+//   });
+//   // This will enable the Live Query real-time server
+//   ParseServer.createLiveQueryServer(httpServer);
+// }
 
-module.exports = {
-  app,
-  config,
-};
+// module.exports = {
+//   app,
+//   config,
+// };
+
+
+var port = process.env.PORT || 1337;
+var httpServer = require("http").createServer(app);
+httpServer.listen(port, function () {
+  console.log("Server running on port " + port + ".");
+});
+
+// This will enable the Live Query real-time server
+ParseServer.createLiveQueryServer(httpServer);
+
+
