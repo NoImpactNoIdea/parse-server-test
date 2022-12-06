@@ -12,7 +12,7 @@ const databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;
 if (!databaseUri) {
   console.log('DATABASE_URI not specified, falling back to localhost.');
 }
-console.log(`database uri is: ${databaseUri}`);
+console.log(`database uri is!: ${databaseUri}`);
 
 const config = {
   databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
