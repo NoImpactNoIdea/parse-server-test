@@ -17,9 +17,9 @@ console.log(`database uri is: ${databaseUri}`);
 const config = {
   databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
-  appId: '47830504903837484',
-  masterKey: '430984567324984', //Add your master key here. Keep it secret!
-  serverURL: 'https://parse-tester-example.herokuapp.com/', // Don't forget to change to https if needed
+  appId: process.env.APP_ID,
+  masterKey: process.env.MASTER_KEY, //Add your master key here. Keep it secret!
+  serverURL: process.env.SERVER_URL, // Don't forget to change to https if needed
   liveQuery: {
     classNames: ['Posts', 'Comments'], // List of classes to support for query subscriptions
   },
